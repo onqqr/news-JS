@@ -19,6 +19,10 @@ class AppController extends AppLoader {
             if (target.classList.contains('source__item')) {
                 const sourceId = target.getAttribute('data-source-id') as string;
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
+                    newsContainer.querySelectorAll('.source__item.active').forEach((item) => {
+                        item.classList.remove('active');
+                    });
+                    target.classList.add('active');
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResp<INewsResponse>(
                         {

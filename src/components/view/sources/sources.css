@@ -29,8 +29,14 @@
 
 .source__item:hover,
 .source__item:focus {
+    border-color: #5ad67d;
+    color: #8ee4a4;
+}
+
+.source__item.active {
     border-color: #3fcc59;
     color: #69db7e;
+    background: rgba(63, 204, 89, 0.12);
     box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
     transform: translateY(-0.25em);
 }
