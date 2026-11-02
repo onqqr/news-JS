@@ -16,7 +16,9 @@ main {
     margin-inline: auto;
 }
 header {
-    padding: 1rem clamp(1rem, 3vw, 2rem);
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+    padding: 1rem 0;
 }
 header h1 {
     margin: 0;
@@ -26,10 +28,12 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    justify-content: space-around;
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+    padding: 1.5rem 0;
     min-height: 100px;
+    gap: 1rem;
 }
 
 .footer a {
