@@ -1,20 +1,27 @@
 .sources {
     display: flex;
     flex-wrap: nowrap;
+    gap: 0.5rem;
     width: 100%;
-    height: 120px;
-    overflow: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 72px;
+    padding: 0.5rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
 }
 
 .source__item {
+    flex: 0 0 auto;
     background: none;
     border: 2px solid #30c5ff;
     font: inherit;
     line-height: 1;
     margin: 0.5em;
-    padding: 1em 2em;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
     color: #70d6ff;
     transition: 0.25s;
     cursor: pointer;
@@ -31,4 +38,46 @@
 .source__item-name {
     font-weight: 400;
     white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .source__item {
+        padding: 1em 2em;
+        font-size: 1em;
+    }
+}
+
+.sources-wrap {
+    position: relative;
+}
+
+.sources-wrap::before,
+.sources-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.sources-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #12141a, transparent);
+}
+
+.sources-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #12141a, transparent);
+}
+
+.sources-wrap.has-left::before {
+    opacity: 1;
+}
+
+.sources-wrap.has-right::after {
+    opacity: 1;
 }

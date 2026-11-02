@@ -15,7 +15,22 @@ class Sources {
             fragment.append(sourceClone);
         });
 
-        (document.querySelector('.sources') as HTMLElement).append(fragment);
+        const sources = document.querySelector('.sources') as HTMLElement;
+        const wrap = document.querySelector('.sources-wrap') as HTMLElement;
+
+        sources.append(fragment);
+
+        const updateFades = (): void => {
+            const maxScroll = sources.scrollWidth - sources.clientWidth;
+            const left = sources.scrollLeft;
+
+            wrap.classList.toggle('has-left', left > 1);
+            wrap.classList.toggle('has-right', left < maxScroll - 1);
+        };
+
+        sources.addEventListener('scroll', updateFades);
+        window.addEventListener('resize', updateFades);
+        updateFades();
     }
 }
 

@@ -1,35 +1,46 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 body {
-    color: #fff;
-    background: #17181c;
-    font-family: sans-serif;
+    margin: 0;
+    min-width: 320px;
+    color: #e8eef5;
+    background: #12141a;
+    font-family: "Fira Sans", system-ui, sans-serif;
 }
-
+.container,
+main {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+}
 header {
-    padding: 10px 30px;
+    padding: 1rem clamp(1rem, 3vw, 2rem);
 }
-
 header h1 {
-    font-size: 40px;
-    font-weight: 800;
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
-
-footer {
-    height: 100px;
+.footer {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    min-height: 100px;
 }
-footer .copyright {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
+
+.footer a {
+    color: #9ad0ff;
+    text-decoration: none;
 }
-footer .copyright a {
-    color: #444;
+
+.footer a:hover {
+    color: #69db7e;
 }
-footer .copyright a:hover {
-    color: #555;
-}
-footer .copyright:before {
-    content: '©';
+
+.footer__course img {
+    display: block;
 }
