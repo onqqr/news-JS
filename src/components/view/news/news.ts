@@ -2,7 +2,18 @@ import './news.css';
 import { IArticle } from '../../../types/interfaces';
 
 class News {
-    draw(data: Readonly<IArticle[]>): void {
+    public draw(data: Readonly<IArticle[]>): void {
+        const container = document.querySelector('.news') as HTMLElement;
+        container.innerHTML = '';
+
+        if (!data.length) {
+            const empty = document.createElement('p');
+            empty.className = 'news-empty';
+            empty.textContent = 'No news for this source. Try another one.';
+            container.append(empty);
+            return;
+        }
+
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment: DocumentFragment = document.createDocumentFragment();
@@ -32,8 +43,7 @@ class News {
             fragment.append(newsClone);
         });
 
-        (document.querySelector('.news') as HTMLElement).innerHTML = '';
-        (document.querySelector('.news') as HTMLElement).appendChild(fragment);
+        container.appendChild(fragment);
     }
 }
 

@@ -6,6 +6,17 @@
     padding-bottom: 2rem;
 }
 
+.news-empty {
+    grid-column: 1 / -1;
+    margin: 3rem auto;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    text-align: center;
+    color: #9aa7b5;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
 .news__item {
     display: flex;
     flex-direction: column;

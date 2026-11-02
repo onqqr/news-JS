@@ -49,7 +49,10 @@ class Loader {
             .then(this.errorHandler)
             .then((res: Response) => res.json())
             .then((data: T) => callback(data))
-            .catch((err: Error) => console.error(err));
+            .catch((err: unknown) => {
+                console.error(err);
+                callback(null);
+            });
     }
 }
 
