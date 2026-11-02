@@ -43,3 +43,10 @@ export interface IRequestOptions {
 export interface ILoaderOptions {
     apiKey: string;
 }
+
+export enum HttpMethod {
+    GET = 'GET',
+}
+export type Callback<T> = (data: T) => void;
+export type ArticlePreview = Pick<IArticle, 'title' | 'url' | 'description'>;
+export type ReadonlySource = Readonly<ISource>;
