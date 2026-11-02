@@ -1,4 +1,4 @@
-import { INewsResponse, ISourcesResponse } from 'src/types/interfaces';
+import { INewsResponse, ISourcesResponse } from '../../types/interfaces';
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 

@@ -1,4 +1,4 @@
-import { INewsResponse, ISourcesResponse } from 'src/types/interfaces';
+import { INewsResponse, ISourcesResponse } from '../../types/interfaces';
 import News from './news/news';
 import Sources from './sources/sources';
 

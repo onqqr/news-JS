@@ -1,4 +1,4 @@
-import { Callback, INewsResponse, ISourcesResponse } from 'src/types/interfaces';
+import { Callback, INewsResponse, ISourcesResponse } from '../../types/interfaces';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {

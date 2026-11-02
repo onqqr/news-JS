@@ -1,4 +1,4 @@
-import { Callback, Endpoint, HttpMethod, ILoaderOptions, IRequestOptions } from 'src/types/interfaces';
+import { Callback, Endpoint, HttpMethod, ILoaderOptions, IRequestOptions } from '../../types/interfaces';
 
 class Loader {
     private baseLink: string;
